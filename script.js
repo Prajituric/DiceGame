@@ -69,31 +69,31 @@ btnRoll.addEventListener("click", function () {
   }
 });
 
-// btnHold.addEventListener("click", function () {
-//   if (playing) {
-//     //  Add current score to active player's score
-//     scores[activePlayer] += currentScore;
+btnHold.addEventListener("click", function () {
+  if (playing) {
+    //  Add current score to active player's score
+    scores[activePlayer] += currentScore;
 
-//     document.getElementById(`score--${activePlayer}`).textContent =
-//       scores[activePlayer];
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
 
-//     // Check if score 100
-//     if (scores[activePlayer] >= 100) {
-//       // Finish  game
-//       playing = false;
-//       diceEl.classList.add("hidden");
+    // Check if score 100
+    if (scores[activePlayer] >= 100) {
+      // Finish  game
+      playing = false;
+      diceEl.classList.add("hidden");
 
-//       document
-//         .querySelector(`.player--${activePlayer}`)
-//         .classList.add("player--winner");
-//       document
-//         .querySelector(`.player--${activePlayer}`)
-//         .classList.remove("player--active");
-//     } else {
-//       // Switch player
-//       switchPlayer();
-//     }
-//   }
-// });
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player--active");
+    } else {
+      // Switch player
+      switchPlayer();
+    }
+  }
+});
 
 btnNew.addEventListener("click", init);
